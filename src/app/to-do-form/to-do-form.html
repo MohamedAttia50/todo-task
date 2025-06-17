@@ -1,0 +1,10 @@
+<section>
+    <div class="container">
+        <h1>To Do Form</h1>
+        <div class="form">
+            <input [(ngModel)]="newTask" placeholder="Add new task"  type="text">
+            <button *ngIf="!editMode" (click)="addTask()">Add</button>
+            <button *ngIf="editMode" (click)="updateTask()">Update</button>
+        </div>
+    </div>
+</section>

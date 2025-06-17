@@ -1,0 +1,13 @@
+<app-to-do-form 
+(add)="addTask($event)" 
+(update)="saveUpdate($event)"
+[editMode]="editMode"
+[editText]="editText">
+
+</app-to-do-form>
+<app-to-do-list 
+(toggleComplete)="completeTask($event)" 
+[tasks]="tasks" 
+(deleteTask)="deleteTask($event)"
+(startEdit)="startUpdate($event)">
+</app-to-do-list>
