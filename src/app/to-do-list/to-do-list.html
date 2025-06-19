@@ -1,17 +1,16 @@
+
 <section>
     <div class="container">
         <h2>ToDoList</h2>
-        @for(task of tasks ;track task.id){
-        <div class="list-item">
-            <p [style.textDecoration]="task.completed ? 'line-through':'none'">{{task.text}}</p>
+        @for (task of tasks; track task.id) {
+            <div class="list-item">
+            <p  [ngStyle]="{'textDecoration':task.completed?'line-through':'none'}">{{task.text}}</p>
             <div class="task-btns">
                 <button (click)="toDeleteTask(task.id)" class="delete">Delete</button>
-                <button (click)="toggleCompleteHandler(task.id) " class="complete">Complete</button>
-                <button class="update" (click)="startEditTask(task)">Updata</button>
+                <button (click)="toCompleteTask(task.id)" class="complete">Complete</button>
+                <button (click)="toUpdateTask(task)" class="update">Updata</button>
             </div>
-
         </div>
         }
-
     </div>
 </section>

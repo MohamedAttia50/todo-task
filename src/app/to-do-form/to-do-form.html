@@ -1,10 +1,20 @@
+<!-- <section>
+    <div class="container">
+        <h1>To Do Form</h1>
+        <div class="form" [ngSwitch]="editMode">
+            <input [(ngModel)]="newTask" placeholder="Add new task"  type="text">
+            <button *ngSwitchCase="false" (click)="addTask()">Add</button>
+            <button *ngSwitchCase="true" (click)="updateTask()">Update</button>
+        </div>
+    </div>
+</section> -->
 <section>
     <div class="container">
         <h1>To Do Form</h1>
-        <div class="form">
-            <input [(ngModel)]="newTask" placeholder="Add new task"  type="text">
-            <button *ngIf="!editMode" (click)="addTask()">Add</button>
-            <button *ngIf="editMode" (click)="updateTask()">Update</button>
+        <div class="form" >
+            <input  placeholder="Add new task"  type="text"  [(ngModel)]="newTask">
+            <button *ngIf="!editMode" (click)="toAddTask()">Add</button>
+            <button *ngIf="editMode" (click)="updateText()">Update</button>
         </div>
     </div>
 </section>

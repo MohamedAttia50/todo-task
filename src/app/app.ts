@@ -5,7 +5,7 @@ import { ToDoForm } from "./to-do-form/to-do-form";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ToDoApp],
+  imports: [ ToDoApp],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

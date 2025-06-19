@@ -1,30 +1,32 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Tasks } from '../to-do-app/tasks.model';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-to-do-list',
-  imports: [],
+  imports: [NgStyle],
   templateUrl: './to-do-list.html',
   styleUrl: './to-do-list.css',
   standalone:true
 })
 export class ToDoList {
+
 @Input({required:true}) tasks:Tasks[]=[];
-@Output() deleteTask=new EventEmitter<number>();
-@Output() toggleComplete=new EventEmitter<number>();
-@Output() startEdit=new EventEmitter<Tasks>();
+@Output () deleteTask=new EventEmitter<number>();
+@Output () completeTask=new EventEmitter<number>();
+@Output () updateTask=new EventEmitter<Tasks>();
+
 
 toDeleteTask(taskId:number){
-  this.deleteTask.emit(taskId)
+  this.deleteTask.emit(taskId);
 }
 
-toggleCompleteHandler(taskId:number){
-  this.toggleComplete.emit(taskId)
+toCompleteTask(taskId:number){
+this.completeTask.emit(taskId);
 }
 
-startEditTask(task:Tasks){
-  this.startEdit.emit(task)
+toUpdateTask(task:Tasks){
+this.updateTask.emit(task);
 }
-
 }
